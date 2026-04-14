@@ -16,7 +16,7 @@ public class Livro {
     }
 
     // Getters e Setters
-    public void setId(int id) {
+    public void setIdLivro(int id) {
         this.id = id;
     }
 
@@ -36,7 +36,7 @@ public class Livro {
         this.autor = autor;
     }
 
-    public int getId() {
+    public int getIdLivro() {
         return id;
     }
 
