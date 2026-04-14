@@ -35,7 +35,6 @@ public class Biblioteca {
                 }
             }
         }
-
     }
 
     // Lista todos os livros cadastrados
@@ -70,20 +69,19 @@ public class Biblioteca {
 
     // USUARIOS ===============================================================
     // Utiliza-se os mesmos principios de cadastro e remoção
+
     public void cadastrarUsuario(String login, String senha, String telefone) {
         int novoIdUsuario = criarIdUsuario();
         if (!isCadastroLivro(novoIdUsuario)) {
             mensagem.usuarioCadastrado(novoIdUsuario, login, senha, telefone);
             listUsuario.add(new Usuario(novoIdUsuario, login, senha, telefone));
         }
-
     }
 
     public void removerUsuario(int id) {
         if (!isCadastroUsuario(id)) {
             mensagem.usuarioNaoEncontrado();
         } else {
-
             for (int i = 0; i < listUsuario.size(); i++) {
                 if (listUsuario.get(i).getIdUsuario() == id) {
                     listUsuario.remove(i);
@@ -91,9 +89,26 @@ public class Biblioteca {
                 }
             }
         }
-
     }
 
+    public void listarUsuario() {
+
+        if (listUsuario.isEmpty()) {
+            mensagem.usuarioNaoCadastrado();
+        } else {
+            StringBuilder sb = new StringBuilder();
+
+            for (Usuario u : listUsuario) {
+                sb.append("ID: " + u.getIdUsuario() + "\n")
+                        .append("Login: " + u.getLogin() + "\n")
+                        .append("Senha: " + u.getSenha() + "\n")
+                        .append("Telefone: " + u.getTelefone() + "\n");
+            }
+
+            JOptionPane.showMessageDialog(null, sb.toString());
+        }
+    }
+    
     public boolean isCadastroUsuario(int id) {
         for (Usuario u : listUsuario) {
             if (u.getIdUsuario() == id) {
@@ -107,6 +122,7 @@ public class Biblioteca {
     public int criarIdLivro() {
         return ++idLivro;
     }
+
     // Gera um id pro usuario
     public int criarIdUsuario() {
         return ++idUsuario;

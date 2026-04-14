@@ -3,13 +3,17 @@ package Biblioteca.src.main.java.biblioteca;
 import javax.swing.JOptionPane;
 
 public class Mensagens {
+    Biblioteca biblioteca;
 
+     // MENUS ===============================================================
+     
     public String menuPrincipal() {
         String menuPrincipal = "╭────────── • ◆ • ──────────╮\n"
                 + "BOAS VINDAS À BIBLIOTECA ONLINE\n"
                 + "╰────────── • ◆ • ──────────╯\n"
                 + "❰1❱ - Menu dos Usuários\n"
                 + "❰2❱ - Menu dos Livros\n"
+                + "❰3❱ - Listar usuários\n"
                 + "❰0❱ - Sair\n";
         return menuPrincipal;
     }
@@ -36,6 +40,8 @@ public class Mensagens {
         return menuUsuario;
     }
 
+    // LIVROS ===============================================================
+
     public String livroCadastrado(int novoIdLivro, String titulo, String descricao, String dataPublicacao,
             String autor) {
         String mensagem = "【✔】 Livro cadastrado com sucesso!\n"
@@ -61,6 +67,9 @@ public class Mensagens {
         return mensagem;
     }
 
+
+    // USUARIOS ===============================================================
+
     public String usuarioCadastrado(int novoIdUsuario, String login, String senha, String telefone) {
         String hideSenha = "*".repeat(senha.length());
         String mensagem = "╭────────── • ◆ • ──────────╮\n"
@@ -74,7 +83,7 @@ public class Mensagens {
         return mensagem;
     }
 
-        public String usuarioNaoEncontrado() {
+    public String usuarioNaoEncontrado() {
         String mensagem = "【✘】Não foi possivel encontrar o usuario com esse ID.";
         JOptionPane.showMessageDialog(null, mensagem);
         return mensagem;
@@ -86,4 +95,15 @@ public class Mensagens {
         return mensagem;
     }
 
+    public String whichLogin() {
+        return "Crie seu login:";
+    }
+
+    public String whichSenha() {
+        return "Crie sua senha:";
+    }
+
+    public String whichTelefone() {
+        return "Telefone:";
+    }
 }
