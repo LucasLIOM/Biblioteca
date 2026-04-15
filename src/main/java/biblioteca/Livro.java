@@ -1,5 +1,3 @@
-package Biblioteca.src.main.java.biblioteca;
-
 public class Livro {
     private int id = 0;
     private String titulo;

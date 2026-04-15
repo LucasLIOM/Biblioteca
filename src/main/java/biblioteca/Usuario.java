@@ -1,5 +1,3 @@
-package Biblioteca.src.main.java.biblioteca;
-
 public class Usuario {
     private int idUsuario;
     private String login;

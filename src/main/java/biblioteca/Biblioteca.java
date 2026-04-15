@@ -1,5 +1,3 @@
-package Biblioteca.src.main.java.biblioteca;
-
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -92,7 +90,6 @@ public class Biblioteca {
     }
 
     public void listarUsuario() {
-
         if (listUsuario.isEmpty()) {
             mensagem.usuarioNaoCadastrado();
         } else {
@@ -114,6 +111,13 @@ public class Biblioteca {
             if (u.getIdUsuario() == id) {
                 return true;
             }
+        }
+        return false;
+    }
+
+    public boolean confirmarUsuario(String login, String senha){
+        if(isCadastroUsuario(idUsuario)){
+            return true;
         }
         return false;
     }

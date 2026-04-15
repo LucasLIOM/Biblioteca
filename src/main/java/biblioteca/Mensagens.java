@@ -1,12 +1,10 @@
-package Biblioteca.src.main.java.biblioteca;
-
 import javax.swing.JOptionPane;
 
 public class Mensagens {
     Biblioteca biblioteca;
 
-     // MENUS ===============================================================
-     
+    // MENUS ===============================================================
+
     public String menuPrincipal() {
         String menuPrincipal = "╭────────── • ◆ • ──────────╮\n"
                 + "BOAS VINDAS À BIBLIOTECA ONLINE\n"
@@ -42,6 +40,22 @@ public class Mensagens {
 
     // LIVROS ===============================================================
 
+    String whichTitulo() {
+        return "Adicione o título do livro:";
+    }
+
+    String whichDescricao() {
+        return "Descrição breve sobre o livro:";
+    }
+
+    String whichAutor() {
+        return "Nome do autor:";
+    }
+
+    String whichDataPub() {
+        return "Data de publicação:";
+    }
+
     public String livroCadastrado(int novoIdLivro, String titulo, String descricao, String dataPublicacao,
             String autor) {
         String mensagem = "【✔】 Livro cadastrado com sucesso!\n"
@@ -66,7 +80,6 @@ public class Mensagens {
         JOptionPane.showMessageDialog(null, mensagem);
         return mensagem;
     }
-
 
     // USUARIOS ===============================================================
 
@@ -105,5 +118,13 @@ public class Mensagens {
 
     public String whichTelefone() {
         return "Telefone:";
+    }
+
+    public String confirmLogin() {
+        return "Confirme seu login:";
+    }
+
+    public String confirmSenha() {
+        return "Confirme sua senha:";
     }
 }
